@@ -31,4 +31,9 @@ tables:
         column: created_by
         description: The person who created the activity record
         public: true
-    measures: []
+    measures:
+      - name: total_activities
+        type: count
+        sql: "{TABLE.unique_id}"
+        description: total activities recorded for the opportunities
+        public: true
