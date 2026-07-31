@@ -4,5 +4,31 @@ tables:
     sql: {{ load_sql('opportunities_data') }}
     description: Semantic view for opportunities_data.
     public: true
-    dimensions: []
+    dimensions:
+      - name: id
+        type: string
+        column: id
+        description: The unique identifier for the opportunity.
+        public: true
+        primary_key: true
+      - name: agency
+        type: string
+        column: agency
+        description: The government agency associated with the opportunity.
+        public: true
+      - name: opportunity_name
+        type: string
+        column: opportunity_name
+        description: The name of the business opportunity.
+        public: true
+      - name: leidos_tcv_amount_in_dollar
+        type: number
+        column: leidos_tcv_amount_in_dollar
+        description: Leidos Total Contract Value in dollars.
+        public: true
+      - name: rfi_release_date
+        type: time
+        column: rfi_release_date
+        description: Request for Information release date.
+        public: true
     measures: []
