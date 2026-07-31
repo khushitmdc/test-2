@@ -4,5 +4,31 @@ tables:
     sql: {{ load_sql('ops_to_activities_data') }}
     description: Semantic view for ops_to_activities_data.
     public: true
-    dimensions: []
+    dimensions:
+      - name: id
+        type: string
+        column: id
+        description: The  identifier for the opportunity activity associated with.
+        public: true
+      - name: unique_id
+        type: string
+        column: unique_id
+        description: unique id
+        public: true
+        primary_key: true
+      - name: activity_name
+        type: string
+        column: activity_name
+        description: The name of the specific activity.
+        public: true
+      - name: created_date
+        type: time
+        column: created_date
+        description: The date when the activity record was created.
+        public: true
+      - name: created_by
+        type: string
+        column: created_by
+        description: The person who created the activity record
+        public: true
     measures: []
