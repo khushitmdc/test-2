@@ -26,4 +26,9 @@ tables:
         column: work_share
         description: The percentage or proportion of work shared.
         public: true
-    measures: []
+    measures:
+      - name: unique_id
+        type: count
+        sql: "{TABLE.unique_id}"
+        description: Total number of practice area workshare arrangements.
+        public: true
