@@ -31,4 +31,9 @@ tables:
         column: rfi_release_date
         description: Request for Information release date.
         public: true
-    measures: []
+    measures:
+      - name: total_opportunities
+        type: count
+        sql: "{TABLE.id}"
+        description: Total number of opportunities.
+        public: true
