@@ -37,3 +37,8 @@ tables:
         sql: "{TABLE.id}"
         description: Total number of opportunities.
         public: true
+      - name: total_tcv_amount
+        type: sum
+        sql: "{TABLE.leidos_tcv_amount_in_dollar}"
+        description: Total summed contract value amount in dollars.
+        public: true
