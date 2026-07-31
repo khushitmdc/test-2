@@ -16,6 +16,12 @@ tables:
         column: agency
         description: The government agency associated with the opportunity.
         public: true
+        meta:
+          secure:
+            func: redact
+            user_groups:
+              includes:
+                - pii_access
       - name: opportunity_name
         type: string
         column: opportunity_name
