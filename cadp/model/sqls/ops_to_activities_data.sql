@@ -3,11 +3,9 @@ SELECT
     agency,
     account_name,
     opportunity_name,
-    activity_name,
-    activity,
-    created_by,
-    cast(created_date as timestamp) as created_date,
-    type,
-    practice_area,
-    concat(id,coalesce(activity, 'no-info'), activity_name) as unique_id
-FROM icebase.builderuploads.ops_to_activities_data
+    practice_area_value,
+    practice_area_name,
+    work_share,
+    amount_share,
+    concat(id, practice_area_name) as unique_id
+FROM icebase.builderuploads.practice_area_workshare_data
