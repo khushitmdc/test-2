@@ -1,0 +1,50 @@
+version: v1alpha
+type: lens
+tags:
+  - Tier.Generated
+  - SemanticModelAgent
+layer: user
+workspace: public
+lens:
+  compute: runnable-default
+  secrets:
+    - name: practice360-builder-lens
+      allKeys: true
+  source:
+    type: minerva
+    name: builder
+    catalog: icebase
+  repo:
+    url: https://github.com/khushitmdc/test-2
+    lensBaseDir: test-2/cadp/model
+    syncFlags:
+      - --ref=main
+  api:
+    logLevel: info
+    resources:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 250m
+        memory: 512Mi
+  router:
+    logLevel: info
+    resources:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 250m
+        memory: 512Mi
+  worker:
+    logLevel: info
+    resources:
+      requests:
+        cpu: 250m
+        memory: 256Mi
+      limits:
+        cpu: 250m
+        memory: 512Mi
+name: practice360-builder-lens
+description: Lens manifest for Practice360 Builder

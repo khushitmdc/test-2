@@ -1,0 +1,26 @@
+name: wf-practice360-builder-sc
+version: v1
+type: workflow
+workspace: public
+layer: user
+tags:
+  - Tier.Gold
+  - SemanticModelAgent
+description: Scanner workflow for consumer-aligned data product
+  practice360-builder (metadata registration in DataOS).
+workflow:
+  dag:
+    - name: practice360-builder-scan
+      description: Scanner for practice360-builder (data product metadata registration).
+      spec:
+        stack: scanner:2.0
+        compute: runnable-default
+        stackSpec:
+          type: data-product
+          sourceConfig:
+            config:
+              type: DataProductMetadata
+              markDeletedDataProducts: true
+              dataProductFilterPattern:
+                includes:
+                  - practice360-builder

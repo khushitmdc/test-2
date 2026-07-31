@@ -1,0 +1,1 @@
+SELECT * FROM icebase.builderuploads.ops_to_activities_data

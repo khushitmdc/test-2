@@ -1,0 +1,8 @@
+tables:
+  - name: opportunities_data
+    title: opportunities_data
+    sql: {{ load_sql('opportunities_data') }}
+    description: Semantic view for opportunities_data.
+    public: true
+    dimensions: []
+    measures: []
