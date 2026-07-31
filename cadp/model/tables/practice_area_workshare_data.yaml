@@ -27,7 +27,7 @@ tables:
         description: The percentage or proportion of work shared.
         public: true
     measures:
-      - name: unique_id
+      - name: total_workshare_records
         type: count
         sql: "{TABLE.unique_id}"
         description: Total number of practice area workshare arrangements.
