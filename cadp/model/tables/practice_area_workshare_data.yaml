@@ -4,5 +4,26 @@ tables:
     sql: {{ load_sql('practice_area_workshare_data') }}
     description: Semantic view for practice_area_workshare_data.
     public: true
-    dimensions: []
+    dimensions:
+      - name: id
+        type: string
+        column: id
+        description: The  identifier for the practice area workshare  associated with opp.
+        public: true
+      - name: unique_id
+        type: string
+        column: unique_id
+        description: unique_id
+        public: true
+        primary_key: true
+      - name: practice_area_name
+        type: string
+        column: practice_area_name
+        description: The name of the practice area involved in the workshare.
+        public: true
+      - name: work_share
+        type: number
+        column: work_share
+        description: The percentage or proportion of work shared.
+        public: true
     measures: []
