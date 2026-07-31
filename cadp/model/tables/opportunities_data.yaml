@@ -42,3 +42,10 @@ tables:
         sql: "{TABLE.leidos_tcv_amount_in_dollar}"
         description: Total summed contract value amount in dollars.
         public: true
+    joins:
+      - name: practice_area_workshare_data
+        relationship: one_to_many
+        sql: "{TABLE}.id = {practice_area_workshare_data.id}"
+      - name: ops_to_activities_data
+        relationship: one_to_many
+        sql: "{TABLE}.id = {ops_to_activities_data.id}"
