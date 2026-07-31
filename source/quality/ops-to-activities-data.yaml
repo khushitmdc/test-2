@@ -1,0 +1,36 @@
+name: ops-to-activities-data-quality
+version: v1
+type: workflow
+tags:
+  - Quality
+description: Data quality checks for opportunities-data
+workspace: public
+workflow:
+  dag:
+    - name: ops-to-activities-data-quality
+      title: ops-to-activities-data Quality Assertion
+      description: Data quality checks for opportunities-data
+      spec:
+        stack: soda+python:1.0
+        logLevel: INFO
+        compute: runnable-default
+        resources:
+          requests:
+            cpu: 1000m
+            memory: 250Mi
+          limits:
+            cpu: 1000m
+            memory: 250Mi
+        stackSpec:
+          inputs:
+            - dataset: dataos://icebase:builderuploads/ops_to_activities_data
+              options:
+                engine: minerva
+                clusterName: builder
+              checks:
+                - missing_count(id) = 0:
+                    attributes:
+                      category: Completeness
+                - duplicate_count(id) = 0:
+                    attributes:
+                      category: Uniqueness
